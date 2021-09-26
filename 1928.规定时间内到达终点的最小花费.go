@@ -23,6 +23,7 @@ func minCost(maxTime int, edges [][]int, passingFees []int) int {
 				continue
 			}
 			f[t][i] = min(f[t][i], f[t-time][j] + passingFees[i])
+			f[t][j] = min(f[t][j], f[t-time][i] + passingFees[j])
 		}
 	}
 	ans := inf
