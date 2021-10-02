@@ -11,7 +11,7 @@ func toHex(num int) string {
 	}
 	sb := strings.Builder{}
 	for i := 7; i >= 0; i-- {
-		val := num >> (4 * i) &0xf
+		val := num >> (4 * i) & 0xf
 		if val > 0 || sb.Len() > 0 {
 			var digit byte
 			if val < 10 {
